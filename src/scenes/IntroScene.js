@@ -13,6 +13,30 @@ export class IntroScene {
   }
 
   init() {
+    const headline = document.querySelector('.scene-intro-content-image');
+    const introTextEl = document.querySelector('.scene-intro-content-text-wrapper');
+
+    const allTiles = document.querySelectorAll('.scene-intro-content-panel-plate');
+    
+
+    gsap.from(allTiles, {
+        duration: 0.5,
+        opacity: 0,
+        y: 50,
+        stagger: 0.1,
+        ease: "power2.out",
+    })
+
+    gsap.from(headline, {
+        duration: 1,
+        y: '-100%'
+    })
+
+    gsap.from(introTextEl, {
+        duration: 1,
+        x: '-100%'
+    })
+
     this.timeout = setTimeout(() => {
       this.scrollToGallery();
       this.onComplete?.();

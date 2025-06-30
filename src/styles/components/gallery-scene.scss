@@ -30,6 +30,8 @@
         z-index: 1;
         max-width: 300px;
         cursor: pointer;
+        animation: pulse 1.6s ease-in-out infinite;
+        will-change: transform;
       }
     }
   }
@@ -51,3 +53,13 @@
     }
   }
 }
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+

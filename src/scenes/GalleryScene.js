@@ -33,7 +33,7 @@ export class GalleryScene {
       slide.addEventListener("click", () => {
         this.scrollToVideo();
         logEvent(`user_interaction:slide_click:${index + 1}`);
-        this.onSlideClick?.(index + 1)
+        this.onSlideClick?.(index + 1);
       });
     });
 
@@ -44,14 +44,14 @@ export class GalleryScene {
       });
     }
   }
-  scrollToVideo(){
-    if(!this.scrollTarget) return;
+  scrollToVideo() {
+    if (!this.scrollTarget) return;
     gsap.to(window, {
-        duration: 1,
-        scrollTo: {
-            y: this.scrollTarget,
-        }, 
-        ease: "power2.out"
-    })
+      duration: 1,
+      scrollTo: {
+        y: this.scrollTarget,
+      },
+      ease: "power2.out",
+    });
   }
 }
