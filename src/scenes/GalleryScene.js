@@ -3,20 +3,21 @@ import Swiper from "swiper";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import gsap from "gsap";
 
 export class GalleryScene {
-  constructor(container) {
+  constructor(container, onSlideClick, scrollTarget) {
     this.container = container;
+    this.onSlideClick = onSlideClick;
+    this.scrollTarget = scrollTarget;
     this.swiper = null;
   }
 
   init() {
-    this.show();
+    const swiperEl = this.container.querySelector(".mySwiper");
 
-    const swiperEl = this.container.querySelector('.mySwiper');
-
-    if(!swiperEl){
-        console.error("Swiper container not found")
+    if (!swiperEl) {
+      console.error("Swiper container not found");
     }
 
     this.swiper = new Swiper(swiperEl, {
@@ -30,8 +31,9 @@ export class GalleryScene {
     const slides = this.container.querySelectorAll(".swiper-slide");
     slides.forEach((slide, index) => {
       slide.addEventListener("click", () => {
+        this.scrollToVideo();
         logEvent(`user_interaction:slide_click:${index + 1}`);
-        this.onSlideClick?.(index + 1);
+        this.onSlideClick?.(index + 1)
       });
     });
 
@@ -42,11 +44,14 @@ export class GalleryScene {
       });
     }
   }
-
-  show() {
-    this.container.classList.remove("hidden");
-  }
-  hide() {
-    this.container.classList.add("hidden");
+  scrollToVideo(){
+    if(!this.scrollTarget) return;
+    gsap.to(window, {
+        duration: 1,
+        scrollTo: {
+            y: this.scrollTarget,
+        }, 
+        ease: "power2.out"
+    })
   }
 }
