@@ -2,11 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./src/styles/main.scss">
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Frontend Task</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div class="orientation-lock">
+      <div class="orientation-lock-warning">
+        <p class="orientation-lock-warning-text">Please rotate your device to portrait mode</p>
+        <img class="orientation-lock-warning-icon" src="./public/icons/rotate.svg" />
+      </div>
+
+    </div>
+    <div class="app-container">
+      <div class="scene-intro">
+
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>

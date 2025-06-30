@@ -1,0 +1,10 @@
+@import './variables.scss';
+@import './font.scss';
+@import './components/components.scss';
+
+body {
+    font-family: $font-default;
+    .hidden {
+        display: none;
+    }
+}
