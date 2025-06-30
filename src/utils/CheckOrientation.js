@@ -1,6 +1,18 @@
-export const checkOrientation = () => {
-    const orientationEl = document.querySelector('.orientation-lock')
-    const isPortrait = window.innerHeight > window.innerWidth;
+import { isMobileDevice } from "./IsMobileDevice";
 
-    isPortrait ? orientationEl.classList.add('hidden') : orientationEl.classList.remove('hidden')
-}
+export const checkOrientation = () => {
+  const orientationEl = document.querySelector(".orientation-lock");
+  const isPortrait = window.innerHeight > window.innerWidth;
+  const isMobile = isMobileDevice();
+
+  if (!isMobile) {
+    orientationEl.classList.add("hidden");
+    return;
+  }
+
+  if (isPortrait) {
+    orientationEl.classList.add("hidden");
+  } else {
+    orientationEl.classList.remove("hidden");
+  }
+};

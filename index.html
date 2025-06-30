@@ -1,8 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="./src/styles/main.scss">
+    <link rel="stylesheet" href="./src/styles/main.scss" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frontend Task</title>
@@ -10,14 +10,37 @@
   <body>
     <div class="orientation-lock">
       <div class="orientation-lock-warning">
-        <p class="orientation-lock-warning-text">Please rotate your device to portrait mode</p>
-        <img class="orientation-lock-warning-icon" src="./public/icons/rotate.svg" />
+        <p class="orientation-lock-warning-text">
+          Please rotate your device to portrait mode
+        </p>
+        <img
+          class="orientation-lock-warning-icon"
+          src="./icons/rotate.svg"
+        />
       </div>
-
     </div>
     <div class="app-container">
       <div class="scene-intro">
-
+        <div class="scene-intro-content">
+          <div class="scene-intro-content-image">
+            <img src="./assets/headline.png" class="headline-img" />
+          </div>
+        </div>
+      </div>
+      <div class="gallery-scene">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="./assets/shoe1.png" /></div>
+              <div class="swiper-slide"><img src="./assets/shoe2.png" /></div>
+              <div class="swiper-slide"><img src="./assets/shoe3.png" /></div>
+              <div class="swiper-slide"><img src="./assets/shoe4.png" /></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-cta">
+              <img src="./assets/cta.png"  class="swiper-button-cta-img"/>
+            </div>
+          </div>
       </div>
     </div>
 
