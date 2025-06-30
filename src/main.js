@@ -1,22 +1,37 @@
 // import { IntroScene } from "./scenes/IntroScene";
 // import { GalleryScene } from "./scenes/GalleryScene";
 // import { VideoScene } from "./scenes/VideoScene";
+import { GalleryScene } from "./scenes/GalleryScene";
+import { IntroScene } from "./scenes/IntroScene";
 import { checkOrientation } from "./utils/CheckOrientation";
 import { logEvent } from "./utils/EventTracker";
-import { gallerySwiper } from "./utils/GallerySwiper";
+import { observeSceneChanges } from "./utils/SceneChange";
 
-document.addEventListener('DOMContentLoaded', () => {
-    logEvent('ad_load')
+const allScenes = document.querySelectorAll('.scene')
+observeSceneChanges(allScenes)
 
-    window.addEventListener('resize', () => {
-        checkOrientation()
-        logEvent('window_resize')
-    })
+document.addEventListener("DOMContentLoaded", () => {
+  logEvent("ad_load");
 
-    window.addEventListener('focus', () => {
-        logEvent('page_hide')
-    })
+  const introEl = document.querySelector(".scene-intro");
+  const galleryEl = document.querySelector(".scene-gallery");
 
-   
-    checkOrientation()
-})
+  const galleryScene = new GalleryScene(galleryEl);
+
+  const introScene = new IntroScene(introEl, () => {
+    galleryScene.init();
+  }, galleryEl);
+
+  window.addEventListener("resize", () => {
+    checkOrientation();
+    logEvent("window_resize");
+  });
+
+  window.addEventListener("focus", () => {
+    logEvent("page_hide");
+  });
+
+  checkOrientation();
+
+  introScene.init();
+});
