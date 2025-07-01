@@ -3,7 +3,7 @@
   position: relative;
 
   &-content {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -65,12 +65,3 @@
   }
 }
 
-.shadow-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-
-    .shadow {
-        width: 95%;
-    }
-}

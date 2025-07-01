@@ -1,7 +1,7 @@
 export class VideoScene {
   constructor(container) {
     this.container = container;
-    this.video = this.container.querySelector(".playing-video");
+    this.video = this.container.querySelector(".video-wrapper");
   }
   init(slideIndex) {
     const positionClasses = [
