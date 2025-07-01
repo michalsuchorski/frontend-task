@@ -1,4 +1,3 @@
-import { logEvent } from "../utils/EventTracker";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import gsap from "gsap";
 
@@ -15,9 +14,8 @@ export class IntroScene {
   init() {
     const headline = document.querySelector('.scene-intro-content-image');
     const introTextEl = document.querySelector('.scene-intro-content-text-wrapper');
-
     const allTiles = document.querySelectorAll('.scene-intro-content-panel-plate');
-    
+    const allTilesText = document.querySelectorAll('.scene-intro-content-panel-plate-text')
 
     gsap.from(allTiles, {
         duration: 0.5,
@@ -25,6 +23,14 @@ export class IntroScene {
         y: 50,
         stagger: 0.1,
         ease: "power2.out",
+    })
+
+    gsap.from(allTilesText, {
+        duration: 0.5,
+        opacity: 0,
+        x: 20,
+        stagger: 0.1,
+        ease: "back.inOut"
     })
 
     gsap.from(headline, {
@@ -40,7 +46,7 @@ export class IntroScene {
     this.timeout = setTimeout(() => {
       this.scrollToGallery();
       this.onComplete?.();
-    }, 2000);
+    }, 222000);
   }
   scrollToGallery() {
     if (!this.scrollTarget) return;

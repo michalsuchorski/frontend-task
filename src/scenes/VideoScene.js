@@ -16,4 +16,7 @@ export class VideoScene {
       positionClasses[slideIndex - 1] || positionClasses[0]
     );
   }
+  show(){
+    this.container.classList.remove('hidden')
+  }
 }

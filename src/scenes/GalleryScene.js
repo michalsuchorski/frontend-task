@@ -54,4 +54,8 @@ export class GalleryScene {
       ease: "power2.out",
     });
   }
+
+  show(){
+    this.container.classList.remove('hidden')
+  }
 }
