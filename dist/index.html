@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Task</title>
+    <script type="module" crossorigin src="/bundle.js"></script>
+    <link rel="stylesheet" crossorigin href="/style.css">
+  </head>
+  <body>
+    <div class="loader"></div>
+    <div class="orientation-lock">
+      <div class="orientation-lock-warning">
+        <p class="orientation-lock-warning-text">
+          Please rotate your device to portrait mode
+        </p>
+        <img class="orientation-lock-warning-icon" src="./icons/rotate.svg" />
+      </div>
+    </div>
+    <div class="app-container">
+      <div class="scene scene-intro" data-scene="intro">
+        <div class="scene-intro-content">
+          <div class="scene-intro-content-image">
+            <img src="./assets/headline.png" class="headline-img" />
+          </div>
+          <div class="scene-intro-content-text-wrapper">
+            <div class="scene-intro-content-text intro-text">
+              <h3 class="scene-intro-content-text-h3">Crafted in Berlin.</h3>
+              <p class="scene-intro-content-text-paragraph">
+                We create shoes that move ahead of time. Every pair is a
+                statement — design, innovation, and uncompromising comfort.
+              </p>
+            </div>
+          </div>
+          <div class="scene-intro-content-panel">
+            <div class="scene-intro-content-panel-plate">
+              <p class="scene-intro-content-panel-plate-text">MOVE</p>
+            </div>
+            <div class="scene-intro-content-panel-plate">
+              <p class="scene-intro-content-panel-plate-text">LOCK</p>
+            </div>
+            <div class="scene-intro-content-panel-plate">
+              <p class="scene-intro-content-panel-plate-text">STRIKE</p>
+            </div>
+            <div class="scene-intro-content-panel-plate">
+              <p class="scene-intro-content-panel-plate-text">
+                <img src="./icons/move.svg" />
+              </p>
+            </div>
+            <div class="scene-intro-content-panel-plate">
+              <p class="scene-intro-content-panel-plate-text">
+                <img src="./icons/lock.svg" />
+              </p>
+            </div>
+            <div class="scene-intro-content-panel-plate">
+              <p class="scene-intro-content-panel-plate-text">
+                <img src="./icons/strike.svg" />
+              </p>
+            </div>
+          </div>
+          <div class="scene-intro-content-text-wrapper about-us-element">
+            <div class="scene-intro-content-text">
+              <h3 class="scene-intro-content-text-h3">About Us.</h3>
+              <p class="scene-intro-content-text-paragraph">
+                At HEADLINE, we combine traditional German craftsmanship with
+                contemporary design to create shoes that are both stylish and
+                functional. Each pair is carefully crafted with attention to
+                detail and innovative techniques, ensuring lasting comfort and
+                durability. Our mission is to design footwear that reflects your
+                individuality and supports you every step of the way — from busy
+                city streets to special moments.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scene scene-gallery hidden" data-scene="gallery">
+        <div class="swiper mySwiper">
+          <div class="swiper-background-blur"></div>
+          <div class="swiper-wrapper"></div>
+          <div class="swiper-button-cta">
+            <img src="./assets/cta.png" class="swiper-button-cta-img" />
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+      <div class="scene scene-video hidden" data-scene="video">
+        <div class="scene-video-content-text-wrapper">
+          <div class="scene-video-content-text">
+            <h3 class="scene-video-content-text-h3">
+              Introducing Our Latest Creation.
+            </h3>
+            <p class="scene-video-content-text-paragraph">
+              For thinkers. For creators. For those who don’t follow trends —
+              they start them.
+            </p>
+          </div>
+        </div>
+        <div class="scene-video-relative">
+          <div class="video-wrapper">
+            <div class="video-flex">
+              <video autoplay muted loop class="playing-video">
+                <source src="./assets/video.mp4" type="video/mp4" />
+              </video>
+              <div class="shadow-wrapper">
+                <img src="./assets/shadow.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
