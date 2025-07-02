@@ -56,7 +56,7 @@ export class IntroScene {
     this.timeout = setTimeout(() => {
       this.scrollToGallery();
       this.onComplete?.();
-    }, 8000); 
+    }, 8000);
   }
   scrollToGallery() {
     if (!this.scrollTarget) return;

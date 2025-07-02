@@ -13,15 +13,13 @@
     align-items: center;
     gap: 20px;
     &-text {
-        font-size: x-large;
-        color: white;
-        font-weight: bold;
-      }
+      font-size: x-large;
+      color: white;
+      font-weight: bold;
+    }
 
-      &-icon {
-        width: 100px;
-      }
+    &-icon {
+      width: 100px;
+    }
   }
-
- 
 }

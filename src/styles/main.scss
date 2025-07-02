@@ -1,16 +1,16 @@
-@import './variables.scss';
-@import './font.scss';
-@import './components/components.scss';
+@import "./variables.scss";
+@import "./font.scss";
+@import "./components/components.scss";
 
 body {
-    font-family: $font-default;
+  font-family: $font-default;
 
-    .app-container {
-        width: 100%;
-        height: auto;
-    }
+  .app-container {
+    width: 100%;
+    height: auto;
+  }
 
-    .hidden {
-        display: none;
-    }
+  .hidden {
+    display: none;
+  }
 }
