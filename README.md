@@ -42,5 +42,24 @@ Tools:
   ```
   App preview will be available at: [http://localhost:4173](http://localhost:4173)
 
+# Architectural decisions
+
+  I structured the code into three main areas: 
+  - scenes,
+  - styles, which are divided into components to ensure easy modifications when needed, 
+  - utils,
+    
+  This organization ensures that the project is clear and easy to navigate for someone seeing the code for the first time.
+  It also helps scale the project and improves team collaboration by allowing developers to work on separate parts without conflicts.
+
+# Technological decisions
+  - [Vite](https://vite.dev/) as the build tool for its fast development server and optimized build process, which enhances overall productivity
+  - JavaScript for all application logic due to its modern features and wide browser support
+  - For animations I used [GSAP](https://gsap.com) - although it was my first time working with this library, I found it very simple to use. It’s lightweight and can be powerful
+  - [SASS](https://sass-lang.com/) as a CSS extension, because it significantly improves writing and scaling styles by allowing nesting, variables and more
+  - I integrated [Swiper.js](https://swiperjs.com/) to create a gallery with minimal setup. It was my first time using this library, and I found it enjoyable to work with
+
+  
+
   
    
