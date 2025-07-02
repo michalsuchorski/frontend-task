@@ -6,19 +6,21 @@ import "swiper/css/navigation";
 import gsap from "gsap";
 
 export class GalleryScene {
-  constructor(container, onSlideClick, scrollTarget) {
+  constructor(container, onSlideClick, scrollTarget, images = []) {
     this.container = container;
     this.onSlideClick = onSlideClick;
     this.scrollTarget = scrollTarget;
+    this.images = images;
     this.swiper = null;
   }
 
   init() {
     const swiperEl = this.container.querySelector(".mySwiper");
-
     if (!swiperEl) {
       console.error("Swiper container not found");
     }
+
+    this.renderSlides();
 
     this.swiper = new Swiper(swiperEl, {
       modules: [Navigation],
@@ -43,7 +45,13 @@ export class GalleryScene {
         logEvent("user_interaction:cta_click");
       });
     }
+
+    gsap.from(swiperEl, {
+      duration: 0.8,
+      y: "100%",
+    });
   }
+
   scrollToVideo() {
     if (!this.scrollTarget) return;
     gsap.to(window, {
@@ -55,7 +63,21 @@ export class GalleryScene {
     });
   }
 
-  show(){
-    this.container.classList.remove('hidden')
+  renderSlides() {
+    const swiperWrapper = this.container.querySelector(".swiper-wrapper");
+    if (!swiperWrapper) {
+      console.error(".swiper-wrapper not found");
+    }
+
+    this.images.forEach((image, index) => {
+      const slide = document.createElement("div");
+      slide.className = "swiper-slide";
+      slide.innerHTML = `<img src="${image}" alt="slide ${index + 1}" />`;
+      swiperWrapper.appendChild(slide);
+    });
+  }
+
+  show() {
+    this.container.classList.remove("hidden");
   }
 }

@@ -21,7 +21,6 @@ export class IntroScene {
       ".scene-intro-content-panel-plate-text"
     );
     const aboutUsEl = document.querySelector(".about-us-element");
-    const shadowEl = document.querySelector(".shadow-wrapper");
 
     gsap.from(allTiles, {
       duration: 0.5,
@@ -53,15 +52,11 @@ export class IntroScene {
       duration: 0.7,
       y: "100%",
     });
-    gsap.from(shadowEl, {
-      duration: 1,
-      y: "100%",
-    });
 
     this.timeout = setTimeout(() => {
       this.scrollToGallery();
       this.onComplete?.();
-    }, 8000);
+    }, 8000); 
   }
   scrollToGallery() {
     if (!this.scrollTarget) return;

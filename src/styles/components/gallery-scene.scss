@@ -1,4 +1,5 @@
 .scene-gallery {
+  user-select: none;
   width: 100%;
   height: 100vh;
   background-position-x: center;
@@ -15,6 +16,8 @@
     &-button-next {
       color: black;
     }
+
+ 
 
     &-button-cta {
       position: absolute;

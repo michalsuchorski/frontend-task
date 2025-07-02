@@ -4,8 +4,8 @@ import { IntroScene } from "./scenes/IntroScene";
 import { VideoScene } from "./scenes/VideoScene";
 import { checkOrientation } from "./utils/CheckOrientation";
 import { logEvent } from "./utils/EventTracker";
-import { isMobileDevice } from "./utils/IsMobileDevice";
 import { observeSceneChanges } from "./utils/SceneChange";
+import { getImages } from "./utils/GetImages";
 
 const allScenes = document.querySelectorAll(".scene");
 observeSceneChanges(allScenes);
@@ -36,7 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
     (slideIndex) => {
       videoScene.init(slideIndex);
     },
-    videoEl
+    videoEl,
+    getImages("shoe", 4)
   );
 
   const introScene = new IntroScene(
